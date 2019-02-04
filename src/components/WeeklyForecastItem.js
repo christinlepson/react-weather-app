@@ -20,8 +20,9 @@ export default class WeeklyForecastItem extends Component {
                 <p className="weekly-forecast-date">{this.props.day}</p>
                 <canvas id={this.props.day} className="weekly-forecast-icon" ref={this.canvasRef}></canvas>
                 <p className="weekly-forecast-temps">
-                    <span className="weekly-forecast-min-temp">{parseInt(this.props.lowTemp)}°</span>
-                    <span className="weekly-forecast-max-temp">{parseInt(this.props.highTemp)}°</span>
+                    <span className="weekly-forecast-min-temp">{parseInt(this.props.lowTemp)}° </span>
+                    /
+                    <span className="weekly-forecast-max-temp"> {parseInt(this.props.highTemp)}°</span>
                 </p>
             </div>
         )

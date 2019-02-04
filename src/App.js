@@ -2,18 +2,19 @@ import React from 'react';
 import './App.css';
 
 import {Consumer} from './components/context'
-import Searchbar from './components/SearchBar';
-import Header from './components/Header';
-import WeeklyForecastList from './components/WeeklyForecastList';
+import MainContent from './components/MainContent'
+import APIForm from './components/APIForm';
 
 const App = () => {
+
     return (
         <Consumer>
             { context => (
                 <div className="App">
-                    <Searchbar />
-                    <Header />
-                    <WeeklyForecastList />
+                    {context.apiKey.length > 0 ?
+                        <MainContent/>
+                        :
+                        <APIForm/> }
                 </div>
             ) }
         </Consumer>
