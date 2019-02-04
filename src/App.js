@@ -1,28 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
-import  SearchBar from './components/SearchBar';
+
+import {Consumer} from './components/context'
+import Searchbar from './components/SearchBar';
 import Header from './components/Header';
 import WeeklyForecastList from './components/WeeklyForecastList';
-import {secretKey} from './components/SecretKey';
 
-class App extends Component {
-
-    fetchForecast = query => {
-        
-    }
-
-    render() {
+const App = () => {
     return (
-        <div className="App">
-        <SearchBar/>
-        <Header/>
-        <WeeklyForecastList/>
-        </div>
+        <Consumer>
+            { context => (
+                <div className="App">
+                    <Searchbar />
+                    <Header />
+                    <WeeklyForecastList />
+                </div>
+            ) }
+        </Consumer>
     );
-
-  }
-
-
 }
 
 export default App;

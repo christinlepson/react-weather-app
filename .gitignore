@@ -19,7 +19,7 @@
 .env.production.local
 
 # dark sky API secret key
-/src/components/SecretKey.js
+/src/secret-keys/SecretKey.js
 
 npm-debug.log*
 yarn-debug.log*
