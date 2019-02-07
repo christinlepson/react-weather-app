@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Header from './Header';
 import WeeklyForecastList from './WeeklyForecastList'
 import {Consumer} from './context';
+import Error from './Error';
 
 export default class MainContent extends Component {
 
@@ -18,27 +19,27 @@ export default class MainContent extends Component {
                         context.actions.setLocation();
                     } 
 
-
+                    console.log(context.locationError);
                     if (context.locationError) {
                         if (context.locationErrorMessage) {
-                            return (<p>
-                                Error getting your location, it may not be enabled in your browser.
-                                </p>);
+                            return (<Error message={`Error getting your location: ${context.locationErrorMessage}`}/>);
                         } else {
-                            return (<p>
-                                {`Error getting your location: ${context.locationErrorMessage}`}
-                                </p>);
+                            return (<Error message="Error getting your location, it may not be enabled in your browser."/>);
                         }
                     } else {
-                        console.log("reached logic");
-                        context.actions.getForecast();
-                        return(
-                            context.isLoading ? <p>Loading...</p> :
-                            <div className="main-content">
-                                <Header/>
-                                <WeeklyForecastList/>
-                            </div>
-                        );
+
+                        if (context.forecastError) {
+                            return (<Error message="Error getting forecast, ensure that a valid Dark Sky API key was entered."/>);
+                        } else {
+                            context.actions.getForecast();
+                            return(
+                                context.isLoading ? <p>Loading...</p> :
+                                <div className="main-content">
+                                    <Header/>
+                                    <WeeklyForecastList/>
+                                </div>
+                            );
+                        }
                     }
                 } }
             </Consumer>

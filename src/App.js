@@ -11,7 +11,7 @@ const App = () => {
         <Consumer>
             { context => (
                 <div className="App">
-                    {context.apiKey.length > 0 ?
+                    {context.apiKey ?
                         <MainContent/>
                         :
                         <APIForm/> }

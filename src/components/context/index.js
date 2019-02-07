@@ -9,6 +9,7 @@ export class Provider extends Component {
         isLoading: true,
         apiKey: '',
         forecast: [],
+        forecastError: false,
         locationAttempt: false,
         locationError: false,
         locationErrorMessage: '',
@@ -38,7 +39,6 @@ export class Provider extends Component {
             latitude: position.coords.latitude,
             longitude: position.coords.longitude
         });
-        this.getForecast(this.state.latitude, this.state.longitude);
     }
 
     getPositionError = error => {
@@ -50,12 +50,15 @@ export class Provider extends Component {
     }
 
     getForecast = () => {
-        const url = `https://api.darksky.net/forecast/${this.state.apiKey}/${this.state.latitude},${this.state.longitude}?units=si`;
+        const url = `https://api.darksky.net/forecast/${this.state.apiKey}/${this.state.latitude},${this.state.longitude}`;
         axios.get(url)
         .then( response => {
             this.setState({isLoading: false, forecast: response.data});
         } )
-        .catch( error => console.log(error) );
+        .catch( error => {
+            console.log(error)
+            this.setState({isLoading: false, forecastError: true});
+        } );
     }
 
     render() {
@@ -63,10 +66,11 @@ export class Provider extends Component {
             <WeatherContext.Provider value={{
                 isLoading: this.state.isLoading,
                 forecast: this.state.forecast,
+                forecastError: this.state.forecastError,
                 apiKey: this.state.apiKey,
                 locationAttempt: this.state.locationAttempt,
-                locationError: this.locationError,
-                locationErrorMessage: this.locationErrorMessage,
+                locationError: this.state.locationError,
+                locationErrorMessage: this.state.locationErrorMessage,
                 actions: {
                     setAPIKey: this.setAPIKey,
                     setLocation: this.setLocation,

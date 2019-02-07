@@ -41,6 +41,18 @@ h1 {
     display: inline-block;
 }
 
+.error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.error-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 20px;
+}
+
 .searchbar-container {
     height: 70px;
     width: 100%;
