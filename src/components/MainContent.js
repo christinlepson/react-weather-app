@@ -29,7 +29,7 @@ export default class MainContent extends Component {
                     } else {
 
                         if (context.forecastError) {
-                            return (<Error message="Error getting forecast, ensure that a valid Dark Sky API key was entered."/>);
+                            return (<Error message="Error getting forecast, ensure that a valid Dark Sky API key was entered and CORS is enabled."/>);
                         } else {
                             context.actions.getForecast();
                             return(
