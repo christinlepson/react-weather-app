@@ -168,6 +168,12 @@ canvas.weekly-forecast-icon {
         flex-direction: column;
     }
 
+    .weekly-forecast-item {
+        border-bottom: 1px solid #000;
+        border-right: none;
+        border-left: none;
+    }
+
 }  
 
 

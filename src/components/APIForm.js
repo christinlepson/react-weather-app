@@ -20,7 +20,8 @@ export default class APIForm extends Component {
                         <div className="api-form-container">
                             <p>Enter in your Dark Sky API key below</p>
                             <form onSubmit={handleFormSubmit}>
-                                <input ref={this.apiinputRef} type="search" placeholder="Enter API key..." />
+                                <input ref={this.apiinputRef} type="text" placeholder="Enter API key..." />
+                                <input type="submit" value="submit" />
                             </form>
                         </div>
                     );
