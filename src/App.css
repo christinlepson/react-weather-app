@@ -162,7 +162,7 @@ canvas.weekly-forecast-icon {
 }
 
 
-@media (min-width: 481px) and (max-width: 767px) {
+@media (max-width: 767px) {
   
     .weekly-forecast-list {
         flex-direction: column;
