@@ -19,27 +19,40 @@ export default class MainContent extends Component {
                         context.actions.setLocation();
                     } 
 
-                    console.log(context.locationError);
                     if (context.locationError) {
                         if (context.locationErrorMessage) {
                             return (<Error message={`Error getting your location: ${context.locationErrorMessage}`}/>);
                         } else {
                             return (<Error message="Error getting your location, it may not be enabled in your browser."/>);
                         }
-                    } else {
+                    }
+                    // if there was no error getting location
+                    else {
 
-                        if (context.forecastError) {
-                            return (<Error message="Error getting forecast, ensure that a valid Dark Sky API key was entered and CORS is enabled."/>);
-                        } else {
+
+                        if (context.forecastAttempt) {
+
+                            if (context.forecastError) {
+                                return (<Error message="Error getting forecast, ensure that a valid Dark Sky API key was entered."/>);
+                            }
+                            // if there was no error getting forecast
+                            else {
+                                
+                                return(
+                                    context.isLoading ? <p>Loading...</p> :
+                                    <div className="main-content">
+                                        <Header/>
+                                        <WeeklyForecastList/>
+                                    </div>
+                                );
+                            }
+
+                        } 
+                        // if there was no attempt to get forecast
+                        else {
                             context.actions.getForecast();
-                            return(
-                                context.isLoading ? <p>Loading...</p> :
-                                <div className="main-content">
-                                    <Header/>
-                                    <WeeklyForecastList/>
-                                </div>
-                            );
                         }
+
                     }
                 } }
             </Consumer>
