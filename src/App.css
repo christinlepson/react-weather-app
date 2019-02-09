@@ -161,6 +161,16 @@ canvas.weekly-forecast-icon {
     border-left: 1px solid #000;
 }
 
+
+@media (min-width: 481px) and (max-width: 767px) {
+  
+    .weekly-forecast-list {
+        flex-direction: column;
+    }
+
+}  
+
+
 .rain-bg {
     background-image: url('img/rain.jpg');
 }
