@@ -1,7 +1,7 @@
 import React from 'react';
 import icon from '../icons/error.svg';
 
-const Error = props => {
+const ErrorMsg = props => {
     return(
         <div className="error">
             <img className="error-icon" src={icon} alt="" />
@@ -10,4 +10,4 @@ const Error = props => {
     )
 };
 
-export default Error;
+export default ErrorMsg;

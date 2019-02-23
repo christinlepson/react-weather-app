@@ -7,7 +7,6 @@ export class Provider extends Component {
 
     state = {
         isLoading: true,
-        apiKey: '',
         forecast: [],
         forecastAttempt: false,
         forecastError: false,
@@ -51,10 +50,11 @@ export class Provider extends Component {
     }
 
     getForecast = () => {
+        console.log("lat: " + this.state.latitude);
         const proxy = 'https://cors-anywhere.herokuapp.com/';
-        const url = `https://api.darksky.net/forecast/${this.state.apiKey}/${this.state.latitude},${this.state.longitude}`;
-        console.log(proxy + url);
-        axios.get(proxy + url)
+        const url = `https://jm3fyzwvfl.execute-api.us-west-2.amazonaws.com/Beta/${this.state.latitude}/${this.state.longitude}`;
+        console.log(url);
+        axios.get(url)
         .then( response => {
             this.setState({isLoading: false, forecast: response.data, forecastAttempt: true});
         } )
@@ -71,10 +71,11 @@ export class Provider extends Component {
                 forecast: this.state.forecast,
                 forecastAttempt: this.state.forecastAttempt,
                 forecastError: this.state.forecastError,
-                apiKey: this.state.apiKey,
                 locationAttempt: this.state.locationAttempt,
                 locationError: this.state.locationError,
                 locationErrorMessage: this.state.locationErrorMessage,
+                latitude: this.state.latitude,
+                longitude: this.state.longitude,
                 actions: {
                     setAPIKey: this.setAPIKey,
                     setLocation: this.setLocation,

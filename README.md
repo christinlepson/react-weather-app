@@ -5,7 +5,7 @@ This application gets the user's current location and retrieves their weekly for
 [Click here to view the demo app.](https://christinlepson.github.io/react-weather-app/)
 
 ## Setup
-This app requires that you have a valid Dark Sky API key and your browser's location feature is enabled. If the user enters an invalid key or blocks their location access, an applicable error message will be displayed.
+This app requires that the user's browser supports location sharing. If the user blocks their location access or their browser is not capable of sharing location, an applicable error message will be displayed.
 
 ## Screenshots
 ![login screenshot](https://raw.githubusercontent.com/christinlepson/react-weather-app/master/src/img/screenshot-login.png)

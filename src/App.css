@@ -134,6 +134,7 @@ canvas.weekly-forecast-icon {
 }
 
 .weekly-forecast-temps {
+    text-align: center;
     font-weight: bold;
     font-size: 18px;
     font-family: 'Roboto', sans-serif;
@@ -153,6 +154,7 @@ canvas.weekly-forecast-icon {
 }
 
 .weekly-forecast-item {
+    text-align: center;
     width: 100%;
     border-right: 1px solid #000;
 }
