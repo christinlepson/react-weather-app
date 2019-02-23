@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/react-weather-app/static/media/partly-cloudy-night.6368745c.jpg"
   },
   {
-    "revision": "89cf4eae67b39ded86f4",
-    "url": "/react-weather-app/static/css/main.c4c6f6fe.chunk.css"
+    "revision": "f30bcaee387328d999e8",
+    "url": "/react-weather-app/static/css/main.f91bf372.chunk.css"
   },
   {
     "revision": "53afdbdb4064c022a51b",
@@ -32,8 +32,8 @@ self.__precacheManifest = [
     "url": "/react-weather-app/static/media/fog.72115c63.jpg"
   },
   {
-    "revision": "89cf4eae67b39ded86f4",
-    "url": "/react-weather-app/static/js/main.89cf4eae.chunk.js"
+    "revision": "f30bcaee387328d999e8",
+    "url": "/react-weather-app/static/js/main.f30bcaee.chunk.js"
   },
   {
     "revision": "95b8fa1bb074e3ee9efe774078a541e5",
@@ -48,19 +48,19 @@ self.__precacheManifest = [
     "url": "/react-weather-app/static/media/sleet.1911515d.jpg"
   },
   {
-    "revision": "c0e59c2a3dedefae9e01813f0a3d1cf4",
-    "url": "/react-weather-app/static/media/rain.c0e59c2a.jpg"
-  },
-  {
     "revision": "f0859cc411d4cbde77c575b0c9135795",
     "url": "/react-weather-app/static/media/clear-day.f0859cc4.jpg"
+  },
+  {
+    "revision": "c0e59c2a3dedefae9e01813f0a3d1cf4",
+    "url": "/react-weather-app/static/media/rain.c0e59c2a.jpg"
   },
   {
     "revision": "8105bd2635f36ec0a7fb5c265471087b",
     "url": "/react-weather-app/static/media/snow.8105bd26.jpg"
   },
   {
-    "revision": "ce7d6b52cf0add2765e5e7ea52d428ff",
+    "revision": "4ba8a1d4f070635e70cf8227fc78a405",
     "url": "/react-weather-app/index.html"
   }
 ];
